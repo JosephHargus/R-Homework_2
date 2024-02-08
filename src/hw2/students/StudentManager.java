@@ -6,6 +6,10 @@ public class StudentManager {
 	
 	ArrayList<Student> students;
 	
+	public StudentManager() {
+		this.students = new ArrayList<Student>();
+	}
+
 	public boolean readFromFile(String fileName) {
 		return false;
 	}
