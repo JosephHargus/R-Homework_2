@@ -69,6 +69,15 @@ public class StudentManager {
 	}
 	
 	public boolean updateStudentGradeById(int id, double grade) {
+		boolean stuExists = searchStudentById(id);
+		if (stuExists) {
+			for (Student student : students) {
+				if (student.getId() == id) {
+					student.setGrade(grade);
+					return true;
+				}
+			}
+		}
 		return false;
 	}	
 }
