@@ -21,12 +21,15 @@ public class StudentManager {
 			while(fileContents.hasNext()) {
 				String studentInfo = fileContents.nextLine();
 				String[] studentInfoArray = studentInfo.split(" ");
+				
 				int id = Integer.parseInt(studentInfoArray[0]);
 				String name = studentInfoArray[1] + " " + studentInfoArray[2];
 				double grade = Double.parseDouble(studentInfoArray[3]);
+				
 				Student newStudent = new Student(id, name, grade); 
 				students.add(newStudent);
 			}
+			fileContents.close();
 			return true;
 			
 		} catch (Exception e) {
