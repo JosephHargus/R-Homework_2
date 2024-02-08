@@ -32,8 +32,11 @@ public class StudentManager {
 			fileContents.close();
 			return true;
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			System.out.println("File was not found. Please try again.");
+			return false;
+		} catch(Exception e) {
+			System.out.println("An error occurred: " + e);
 			return false;
 		}
 	}
