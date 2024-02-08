@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class StudentManager {
 	
-	ArrayList<Student> students;
+	private ArrayList<Student> students;
 	
 	public StudentManager() {
 		this.students = new ArrayList<Student>();
@@ -36,6 +36,18 @@ public class StudentManager {
 	}
 	
 	public void displayStudents() {
+		
+		//check for an empty array
+		if(this.students.isEmpty()) {
+			System.out.println("There are no students in the StudentManager.");
+			return;
+		}
+		
+		//print the Student objects
+		for(Student student : this.students) {
+			System.out.println(student.toString());
+		}
+		return;
 		
 	}
 	
