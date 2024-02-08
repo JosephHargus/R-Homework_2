@@ -55,19 +55,17 @@ public class StudentManager {
 	}
 	
 	public boolean searchStudentById(int id) {
+		  for (Student s: students) {
+	            if (s!= null && s.equals(new Student(id, "", 0))) {
+	                System.out.println("Student found: " + s.toString());
+	                return true;
+	            }
+	        }
+		  System.out.println("Student " + id + " student id not found");
 		return false;
 	}
 	
 	public boolean updateStudentGradeById(int id, double grade) {
-		boolean stuExists = searchStudentById(id);
-		if (stuExists) {
-			for (Student student : students) {
-				if (student.getId() == id) {
-					student.setGrade(grade);
-					return true;
-				}
-			}
-		}
 		return false;
 	}	
 }
