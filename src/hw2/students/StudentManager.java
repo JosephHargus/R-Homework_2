@@ -59,7 +59,7 @@ public class StudentManager {
 	
 	public boolean searchStudentById(int id) {
 		  for (Student s: students) {
-	            if (s!= null && s.equals(new Student(id, "", 0))) {
+	            if (s!= null && s.getId()==id) {
 	                System.out.println("Student found: " + s.toString());
 	                return true;
 	            }
